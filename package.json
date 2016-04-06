@@ -1,0 +1,63 @@
+{
+  "name": "Sector-radio",
+  "private": true,
+  "version": "0.0.1",
+  "description": "",
+  "repository": "",
+  "license": "MIT",
+
+  "scripts": {
+    "test": "NODE_ENV=test karma start",
+    "postinstall": "",
+    "prestart": "",
+    "start": "NODE_ENV=development webpack-dev-server --harmony --history-api-fallback --inline --progress",
+    "build": "NODE_ENV=production rimraf dist && webpack --harmony --bail --progress --profile"
+  },
+  
+  "dependencies": {
+    "angular": "^1.5.3"
+  },
+
+  "devDependencies": {
+    "rimraf": "^2.5.1",
+    "copy-webpack-plugin": "^1.1.1",
+    "null-loader": "^0.1.1",
+    "node-libs-browser": "^1.0.0",
+    "html-webpack-plugin": "^2.7.1",
+    "extract-text-webpack-plugin": "",
+    "webpack-path-rewriter ": "^1.1.3",
+
+    "karma-chrome-launcher": "^0.2.0",
+    "karma-jasmine": "^0.3.6",
+    "jasmine-core": "^2.3.4",
+    "karma-webpack": "^1.7.0",
+    "angular-mocks": "^1.5.3",
+    "karma-babel-preprocessor": "^6.0.1",
+    "babel-preset-es2015": "",
+
+    "babel-core": "",
+    "css-loader": "",
+    "style-loader": "",
+    "babel-loader": "",
+    "jade": "",
+    "jade-loader": "",
+    "raw-loader": "",
+    "stylus-loader": "",
+    "file-loader": "",
+    "url-loader": "",
+    "autoprefixer": "",
+    "nib": "",
+    "typescript-loader": "",
+
+    "bootstrap3-stylus": "",
+    "underscore": "~1.7.0",
+    "angular-translate": "",
+    "angular-sanitize": "^1.5.3",
+    "angular-resource": "^1.5.3",
+    "angular-i18n": "^1.5.3",
+    "angular-route": "^1.5.3",
+    "jplayer": "",
+    "zeptojs": ""
+  }
+
+}

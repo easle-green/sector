@@ -1,0 +1,56 @@
+body
+  color: white
+  font: lighter 10px "Segoe UI Light", "Segoe UI", "pragmaticalightclight", sans-serif
+  transition: background-color 1s ease-out
+  &.orange
+    background-color: #F2836B
+  &.green
+    background-color: #848139
+  &.dark
+    background-color: #6A758D
+
+*
+  box-sizing(border-box)
+
+*:before, *:after
+  box-sizing(border-box)
+
+.st-content
+  background: rgb(150, 150, 150) url(../images/backgrounds/background1.png) no-repeat top center
+  /*background-size cover*/
+  /*overflow-y scroll*/
+
+.overlay
+  absolute top 0 left -200px
+  size 1000px 400px
+  background: url("../images/round-bg.png") no-repeat scroll -860px -20px transparent
+
+.row
+  max-width: none
+
+.inline
+  display inline
+
+.container
+  margin: auto
+  width: 1240px
+  padding: 0 20px
+
+.w100
+  width: 100%
+
+.no-decoration
+  &,
+  &:hover,
+  &:focus
+    text-decoration: none
+
+.uppercase
+  text-transform uppercase
+.lowercase
+  text-transform lowercase
+
+box-shadow(args...)
+  -webkit-box-shadow args
+  -moz-box-shadow args
+  box-shadow args

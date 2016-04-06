@@ -1,0 +1,6 @@
+<IfModule mod_mime.c>
+  AddType application/x-httpd-php .html
+</IfModule>
+
+RemoveHandler .svg
+AddType image/svg+xml .svg

@@ -1,0 +1,273 @@
+﻿<!DOCTYPE html>
+<html ng-app="sector">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>СЕКТОР радио</title>
+    <link href="/favicon.ico" rel="icon" type="image/x-icon" />
+    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+</head>
+
+<body>
+
+<div id="st-container" class="st-container st-effect-6">
+
+  <div class="st-pusher" id="st-pusher">
+
+    <!--
+    <nav class="st-menu st-effect-6" id="menu-6">
+      <div class="history row" id="history-block">
+        <div class="tracks" id="history">
+          <h5>История эфира</h5>
+          <div class="history-block">
+            <?php include('history.php'); ?>
+          </div>
+        </div>
+      </div>
+    </nav>
+    -->
+
+    <div class="st-content">
+      <div class="st-content-inner">
+
+        <div class="container">
+          <header class="header row">
+            <ul class="lang list-inline text-right">
+              <li><a class="lang__icon active" href="/">RU</a></li>
+              <li><a class="lang__icon" href="/de/">DE</a></li>
+              <li><a class="lang__icon" href="/ge/">GE</a></li>
+              <li><a class="lang__icon" href="/fr/">FR</a></li>
+              <li><a class="lang__icon" href="/it/">IT</a></li>
+              <li><a class="lang__icon" href="/en/">EN</a></li>
+              <li><a class="lang__icon" href="/sp/">SP</a></li>
+            </ul>
+
+            <div class="logo row">
+              <div class="logo__sector col-md-4 text-center">
+                <a class="logo__sector-img" href="http://sectorradio.ru/">
+                  <img class="w100" src="assets/images/svg/sector-2016.svg" alt="SECTOR RADIO" />
+                </a>
+              </div>
+              <div class="logo__slogan col-md-20">
+                <h2 class="logo__slogan-about">
+                  <span>Hi-Fi</span> интернет-радиостанция в форматах <span class="black">OGG Vorbis</span> <span class="lowercase">и</span> <span class="black">FLAC</span>
+                </h2>
+                <h1 class="logo__slogan-describe">
+                  <span class="black">Канал</span> классической электронной музыки
+                </h1>
+                <a href="javascript: void(0)" class="btn btn-channels no-decoration" id="channels">
+                  Другие каналы
+                </a>
+              </div>
+            </div>
+          </header>
+
+          <div class="content row">
+            <div class="player row">
+              <div class="col-md-4 text-center" id="player">
+                <div class="player__round">
+                  <div id="jplayer" class="hidden"></div>
+                  <a class="play" id="play" href="javascript:void(0)"></a>
+                </div>
+                <div class="player__track">
+                  <div id="track-loader">
+                    <div class="player__title">Title</div>
+                    <div class="player__trackname">Track name</div>
+                  </div>
+                </div>
+              </div>
+              <div class="player__volume col-md-2">
+                <div class="colname">Громкость</div>
+                <div class="player__volume-slider equalizer">
+                  <ul>
+                    <li class="size100" data-size="100"><a href="javascript:void(0)"><div></div></a><span>75%</span></li>
+                  </ul>
+                </div>
+              </div>
+              <bitrate-block></bitrate-block>
+              <div class="equalizer col-md-13">
+                <div class="colname">Охваченный диапазон частот</div>
+                <ul id="equalizer">
+                  <li class="size100" data-size="100"><b><div></div></b><a href="javascript:void(0)"><div></div></a><span>0.2к</span></li>
+                  <li class="size90" data-size="90"><b><div></div></b><a href="javascript:void(0)"><div></div></a><span>1к</span></li>
+                  <li class="size70" data-size="70"><b><div></div></b><a href="javascript:void(0)"><div></div></a><span>3к</span></li>
+                  <li class="size60" data-size="60"><b><div></div></b><a href="javascript:void(0)"><div></div></a><span>5к</span></li>
+                  <li class="size70" data-size="70"><b><div></div></b><a href="javascript:void(0)"><div></div></a><span>6к</span></li>
+                  <li class="size70" data-size="70"><b><div></div></b><a href="javascript:void(0)"><div></div></a><span>8к</span></li>
+                  <li class="size60" data-size="60"><b><div></div></b><a href="javascript:void(0)"><div></div></a><span>9к</span></li>
+                  <li class="size80" data-size="80"><b><div></div></b><a href="javascript:void(0)"><div></div></a><span>10к</span></li>
+                  <li class="size60" data-size="60"><b><div></div></b><a href="javascript:void(0)"><div></div></a><span>11к</span></li>
+                  <li class="size50" data-size="50"><b><div></div></b><a href="javascript:void(0)"><div></div></a><span>12к</span></li>
+                  <li class="size60" data-size="60"><b><div></div></b><a href="javascript:void(0)"><div></div></a><span>13к</span></li>
+                  <li class="size70 64k" data-stop="64" data-size="70"><b><div></div></b><a href="javascript:void(0)"><div></div></a><span>15к</span></li>
+                  <li class="size60" data-size="60"><b><div></div></b><a href="javascript:void(0)"><div></div></a><span>16к</span></li>
+                  <li class="size80 128k" data-stop="128" data-size="80"><b><div></div></b><a href="javascript:void(0)"><div></div></a><span>17к</span></li>
+                  <li class="size80 192k disabled" data-stop="192" data-size="80"><b><div></div></b><a href="javascript:void(0)"><div></div></a><span>18к</span></li>
+                  <li class="size100 256k disabled" data-stop="256" data-size="100"><b><div></div></b><a href="javascript:void(0)"><div></div></a><span>20к</span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!--<div class="history row" id="history-block">
+            <div class="tracks" id="history">
+              <h5>История эфира</h5>
+
+
+            </div>
+          </div>
+
+          <div class="hide-history row">
+            <div class="column">
+              <a id="hide-history" class="down" href="javascript: void(0)">Показать историю</a>
+            </div>
+          </div>-->
+
+          <footer class="footer row">
+
+            <!--
+            <div class="description row" id="description-block">
+              <div class="small-3 columns">
+                <h6 class="hear">Что слушаем</h6>
+                <blockquote>
+                  «Сектор» ― буквально, целиком и пол&#173ностью вби&#173рает в себя само поня&#173тие электрон&#173ной музыки
+                </blockquote>
+                <div>
+                  Музыкальный фон, веща&#173емый нашей радио&#173стан&#173цией ― это «Бер&#173лин&#173ская школа», «Нью эйдж», «эм&#173би&#173ент», аван&#173гар&#173дная, и даже электро&#173акус&#173тичес&#173кая музыка. В любом случае, мы поста&#173рались ох&#173ва&#173тить мак&#173си&#173мально широ&#173кий спектр электрон&#173ной музыки.
+                </div>
+              </div>
+              <div class="small-3 columns">
+                <h6 class="how">Как слушать</h6>
+                <blockquote>
+                  Интернет-радио можно слушать на любых проигрывателях, имеющих выход в Интернет
+                </blockquote>
+                <div>
+                  Откройте <a href="/sector.m3u" target="_blank">данный файл</a> в любом из имеющихся медиа-проигрывателей с поддержкой потокового вещания. Воспроизведение также доступно и на портативных устройствах: как в интернет-обозревателе, так и в стандартном медиа-проигрывателе. Наслаждайтесь!
+                </div>
+              </div>
+              <div class="small-3 columns">
+                <h6 class="mp3">Что такое mp3</h6>
+                <blockquote>
+                  То, на чём базируется формат «mp3» ― это всевозможные уловки по искус&#173ственному насыщению звука
+                </blockquote>
+                <div>
+                  Mp3, как формат, имеет далеко не лучшее качество звучания, по современным меркам. Технические ограничения на количество каналов частоту дискретизации, изначально плохо спроектированную систему тегов, давно устарелый алгоритм кодирования и т.д.
+                </div>
+              </div>
+              <div class="small-3 columns">
+                <h6 class="ogg">Почему лучше Ogg</h6>
+                <blockquote>
+                  «Огг Ворбис» обладает наиболее современной и качественной психо&#173акустической моделью
+                </blockquote>
+                <div>
+                  «Огг Ворбис», по принципам дей&#173ствия близок к «mp3», и ему подоб&#173ным форма&#173там, однако мате&#173ма&#173тичес&#173кая обра&#173ботка  сигнала и практи&#173ческая реали&#173зация «Огг» в корне отлича&#173ются. Кроме этого, формат абсолютно бес&#173платен, открыт и свобо&#173ден от патен&#173тов.
+                </div>
+              </div>
+            </div>
+            -->
+
+            <div class="footer__columns row">
+
+              <div class="footer__about col-md-8">
+                <div class="footer__first">
+                  <p>
+                    <strong>Ogg Vorbis</strong> ― это мультимедийный контейнер, представляющий собой  семейство форматов, разработанных в лаборатории Xiph.org. Как и другие технологии от  Xiph.org ― кодировщик «Огг Ворбис» является открытым и бесплатным форматом для использования в любых целях.  Как и большинство других контейнерных форматов, он сжимает и инкапсулирует исходные данные, что позволяет чередовать аудиопоток с видео данными в единой файловой оболочке, подобно видео-формату QuickTime (mov), MPEG потока AVI и т.п. 
+                  </p>
+                </div>
+                <p>
+                  В дополнение к инкапсуляции и чередо&#173ван&#173ию нес&#173коль&#173ких пото&#173ков дан&#173ных, в Огг-файл внедрён пакет по обнаружению ошибок с отметками о периодической проверке  времени для поиска. Информация внедряется в свободное пространство переменного битрейта. «Огг» является линейно- ориентированным контейнером, то есть он может быть записан и прочитан за один проход, что делает его удобным для потокового интернет-вещания. Это свойство меняет все представления о хранении и передачи данных.
+                  <br/>
+                  Подробности: <a href="http://www.vorbis.org.ru/" target="_blank">www.vorbis.org.ru</a>
+                </p>
+              </div>
+
+              <div class="col-md-8">
+                <div class="footer__first">
+                  <div class="footer__image">
+                    <a class="footer__xiph" href="http://www.xiph.org/" target="_blank">
+                      <img src="assets/images/svg/xiph.svg" alt="xiph.org" />
+                    </a>
+                  </div>
+                  <div>
+                    «Огг Ворбис» представляет собой полностью открытый, свободный от патентов, профессиональный программный продукт для сжатия аудио-потока, использующий все преимущества открытого исходного кода.
+                    Подробности на английском языке: <a href="http://www.xiph.org/" target="_blank">www.xiph.org</a>
+                  </div>
+                </div>
+                <div class="footer__image">
+                  <a class="footer__foobar2000 no-decoration" href="http://www.foobar2000.ru/" target="_blank">
+                    <img src="assets/images/svg/foobar2000.svg" alt="Foobar2000"/>
+                  </a>
+                  <a class="footer__link no-decoration" href="/downloads/foobar2000.exe" target="_blank">Скачать Foobar2000</a>
+                </div>
+                <p>
+                  Foobar2000 является сегодня самым передовым и бесплатным аудиопроигрывателем для IBM-совместимых платформ. Некоторые из основных особенностей плеера включают в себя полную поддержку Unicode, поддержку ReplayGain, а также встроенную поддержку ряда популярных звуковых форматов.
+                  <br/>
+                  Подробности: <a href="http://www.foobar2000.ru/" target="_blank">www.foobar2000.ru</a>
+                </p>
+              </div>
+
+              <div class="col-md-8 text-right">
+                <div class="footer__first footer__browsers">
+                  <div class="footer__image">
+                    <a href="http://browser.yandex.net/" target="_blank"><img class="footer__yabra" src="assets/images/svg/ico_yandexbrowser.svg" alt="Яндекс.Браузер"/></a>
+                    <img src="assets/images/svg/html5.svg" alt="HTML5"/>
+                  </div>
+                  <div class="text-right footer__html5">
+                    Сайт свёрстан в стандарте HTML5 <br/>
+                    Для качественного отображения содержимого<br/>
+                    рекоммендуем Яндекс.Браузер
+                  </div>
+                </div>
+
+                <div class="footer__bordered text-right">
+                  <a href="http://nevalink.ru/" target="_blank"><img src="assets/images/svg/nevalink.svg" alt="Nevalink"/></a>
+                  <a href="http://iangorboun.ru/portfolio/work124.html" target="_blank"><img src="assets/images/svg/ian.gorboun.svg" alt="IAN GORBOUN"/></a>
+                </div>
+
+                <div class="text-right">
+                  © 2012-<?php echo date("Y");?>. Сектор. Все права сохранены<br/>
+                  © 2013. Ян Горбун ― идея, дизайн и поддержка<br/>
+                  © 2013. Виктор Бойко ― разработка сайта<br/>
+                  <a href="http://nevalink.ru/" target="_blank">Невалинк</a>™ ― хостинг и радиосервер
+                </div>
+              </div>
+
+            </div>
+
+            <div class="google footer__columns row">
+              <div class="text-right">
+                <a class="google__app no-decoration" href="https://play.google.com/store/apps/details?id=ru.sectorradio" target="_blank">
+                  приложение «Сектор радио» <span>на Google Play™</span>
+                </a>
+              </div>
+            </div>
+
+          </footer>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+  <!--<script src="assets/js/vendor/jquery.js"></script>-->
+  <!--<script src="assets/js/vendor/modernizr.custom.js"></script>-->
+  <!--<script src="assets/js/vendor/classie.js"></script>-->
+
+  <!--<script src="assets/js/vendor/jquery.jplayer.min.js"></script>-->
+  <!--<script src="assets/js/vendor/jquery.easing.1.3.js"></script>-->
+  <!--<script src="assets/js/vendor/jquery.backgroundSize.js"></script>-->
+  <!--<script src="assets/js/vendor/bgpos.js"></script>-->
+
+  <!--<script src="assets/js/vendor/jquery.mousewheel.min.js"></script>-->
+
+  <!--<script src="assets/js/vendor/jquery.mCustomScrollbar.min.js"></script>-->
+
+  <!--<script src="assets/js/vendor/sidebarEffects.js"></script>-->
+
+  <?php include "googol.html" ?>
+
+</body>
+
+</html>
