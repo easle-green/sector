@@ -19,6 +19,23 @@ module.exports = {
 		styles: "./assets/css/application.styl"
 	},
 
+	resolve: {
+		modulesDirectories: [
+			"node_modules",
+			"bower_components"
+		],
+		extensions: ["", ".json", ".js", ".styl"]
+	},
+
+	output: {
+		path: __dirname + "/assets",
+		publicPath: "/",
+		//filename: is_dev? "sector.js" : "[name]-[hash].js",
+		filename: 'sector-[chunkhash].js',
+		//chunkFilename: is_dev ? "sector.js" : "[name]-[hash].js",
+		library: 'SECTOR'
+	},
+
 	module:  {
 		loaders:[
 			/*{
@@ -27,7 +44,7 @@ module.exports = {
 			},*/
 			{
 				test: /\.js$/,
-				loader: 'babel?presets[]=es2015'
+				loader: 'babel?presets[]=es2015,plugins[]=transform-es2015-modules-commonjs'
 			},
 			{
 				test: /\.ts$/,
@@ -55,22 +72,13 @@ module.exports = {
 			{ test: /\.woff2$/, loader: 'url?limit=65000&mimetype=application/font-woff2&name=assets/fonts/[name]-[hash].[ext]' },
 			{ test: /\.[ot]tf$/, loader: 'url?limit=65000&mimetype=application/octet-stream&name=assets/fonts/[name]-[hash].[ext]' },
 			{ test: /\.eot$/, loader: 'url?limit=65000&mimetype=application/vnd.ms-fontobject&name=assets/fonts/[name]-[hash].[ext]' }
-
-		]
+		],
+		noParse: /\.min\.js/
 	},
 
 	stylus: {
 		use: [require('nib')()],
 		import: ['~nib/lib/nib/index.styl']
-	},
-
-	output: {
-		path: __dirname + "/assets",
-		publicPath: "/",
-		//filename: is_dev? "sector.js" : "[name]-[hash].js",
-		filename: 'sector-[chunkhash].js',
-		//chunkFilename: is_dev ? "sector.js" : "[name]-[hash].js",
-		library: 'SECTOR'
 	},
 
 	watch: is_dev,
@@ -94,7 +102,8 @@ module.exports = {
 		new ExtractTextPlugin('[name]-[hash].css', {
 			allChunks: true,
 			disable: is_dev
-		})
+		}),
+		new webpack.DefinePlugin({"process.env": {NODE_ENV: process.env.NODE_ENV }})
 	]
 
 };
@@ -107,7 +116,9 @@ if (!is_dev) {
 				drop_console: true,
 				unsafe: true
 			}
-		})
+		}),
+		new webpack.optimize.DedupePlugin(),
+		new webpack.optimize.OccurenceOrderPlugin()
 		//,
 		//new PathRewriterPlugin()
 		//,
