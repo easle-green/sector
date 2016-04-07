@@ -29,11 +29,13 @@
     overflow: hidden
     width: 100%
     text-overflow: ellipsis
+
   &__title
     font-size: 15px
     font-weight: bold
     text-align: center
     color: #fff
+
   &__trackname
     color: rgba(255, 255, 255, 0.9)
     font-size: 15px
@@ -48,3 +50,44 @@
         margin-top: 14px
     .colname
       margin-left: -11px
+
+    &-slider
+      &.equalizer
+        margin-top -7px
+        overflow visible
+
+      .equalizer__container
+        height 185px
+        &:hover
+          .equalizer__container-point:after
+            opacity 1
+        &-element
+          height 190px
+          position: relative
+        &-point
+          absolute top 40px left -2px
+          size 24px
+          background-color #fff
+          z-index 200
+          border-radius 100%
+          overflow visible
+          cursor: pointer
+          &:after
+            absolute top 0 left -30px
+            size 16px 28px
+            background: url(../../../images/svg/big_arrow.svg) no-repeat 0 0
+            display block
+            content: ' '
+            opacity 0
+            transition all 0.2s ease 0s
+        &-line
+          height 166px
+          position: relative
+          background-color rgba(0, 0, 0, 0.4)
+        &-bg
+          size 20px 110px
+          absolute bottom 0 left 0
+          background-color #48A7E5
+        &-description
+          font-size 15px
+          margin-top: 7px

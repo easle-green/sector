@@ -1,5 +1,5 @@
 .equalizer
-  height 272px
+  height 250px
   overflow: hidden
 
   .colname
@@ -13,23 +13,28 @@
     margin-left: 10px
     margin-top: 16px
 
+    &,
     &-element
-      size 6.25% 165px
+      height 152px
+
+    &-element
+      width 6.25%
       display: table-cell
-      b, a
+      > div,
+      > a
         overflow: hidden
         position: relative
-        > div
+        > b
           absolute top 0 left 0
           size 20px 180px
           background-color: #48A7E5
-      b
+      > div
         size 20px 20px
         background-color: #48A7E5
         display: block
         margin-bottom: 10px
         border-radius: 10px
-      a
+      > a
         display: block
         width: 20px
         background-color: #48A7E5
@@ -41,16 +46,16 @@
         color: #fff
         display: block
         font-size: 11px
-        margin-top: 10px
+        margin-top: 8px
         text-align: center
         width: 20px
 
       &.disabled
-        b,
-        a
+        > div,
+        > a
           background-color: rgba(0, 0, 0, 0.4)
           /*box-shadow: inset -1px 0 3px rgba(0, 0, 0, 0.5)*/
-          > div
+          > b
             left: -20px
         span
           color: rgba(0, 0, 0, 0.4)
