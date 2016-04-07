@@ -5,8 +5,6 @@ const NODE_ENV = process.env.NODE_ENV || 'development',
 	webpack = require ('webpack'),
 
 	nib = require('nib'),
-	poststylus = require('poststylus'),
-	//autoprefixer = require('autoprefixer'),
 
 	HtmlWebpackPlugin = require('html-webpack-plugin'),
 	ExtractTextPlugin = require('extract-text-webpack-plugin')
@@ -81,8 +79,7 @@ module.exports = {
 
 	stylus: {
 		use: [
-			nib(),
-			poststylus('rucksack-css')
+			nib()
 		],
 		import: ['~nib/lib/nib/index.styl']
 	},

@@ -51,8 +51,6 @@
     "typescript-loader": "",
 
     "bootstrap3-stylus": "",
-    "poststylus": "",
-    "rucksack-css": "",
     "underscore": "~1.7.0",
     "angular-translate": "",
     "angular-sanitize": "^1.5.3",

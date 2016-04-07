@@ -1,6 +1,6 @@
 ### SECTOR FRONTEND
 
-**NodeJS • Webpack • AngularJS • Stylus+Nib+Rucksack (Bootstrap3 24x grid) • Karma+Jasmine**
+**NodeJS • Webpack • AngularJS • Stylus+Nib (Bootstrap3 24x grid) • Karma+Jasmine**
 
 ### Install Dependencies
 
