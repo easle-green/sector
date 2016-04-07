@@ -1,5 +1,5 @@
 module.exports = function(sector) {
-	sector.factory('Bitrate', function($route, $location, DEFAULTS) {
+	sector.factory('Bitrate', function(DEFAULTS) {
 		return {
 
 			bitrate: DEFAULTS.bitrate,

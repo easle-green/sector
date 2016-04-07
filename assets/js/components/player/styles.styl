@@ -1,0 +1,50 @@
+.player
+
+  &__track
+    size 100% 65px
+    display: table
+    vertical-align: bottom
+    > div
+      display: table-cell
+      vertical-align: middle
+
+  &__round
+    size 140px 140px
+    margin 28px auto 0
+    padding: 30px
+    background-color: rgba(255, 255, 255, 0.4)
+    border-radius: 70px
+    > a
+      size 80px 80px
+      display: block
+      position: relative
+    .play
+      background: url(../../../images/svg/pause.svg) no-repeat
+    .pause
+      background: url(../../../images/svg/play.svg) no-repeat
+
+  &__title,
+  &__trackname
+    white-space: nowrap
+    overflow: hidden
+    width: 100%
+    text-overflow: ellipsis
+  &__title
+    font-size: 15px
+    font-weight: bold
+    text-align: center
+    color: #fff
+  &__trackname
+    color: rgba(255, 255, 255, 0.9)
+    font-size: 15px
+    line-height: 19px
+    text-align: center
+
+  &__volume
+    margin-left 20px
+    &-slider
+      &.equalizer
+        width: 40px
+        margin-top: 14px
+    .colname
+      margin-left: -11px

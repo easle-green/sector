@@ -8,10 +8,10 @@ sector.modules.forEach((module)=> {
 
 function connect(module) {
 	let path = './components/' + module + '/';
-	require(path + '_' + module)(sector);		// Model
-	require(path + module + 'Ctrl')(sector); 	// Controller
-	require(path + 'index') (					// Component
+	require(path + 'Model')(sector);	// Model
+	require(path + 'Ctrl')(sector); 	// Controller
+	require(path + 'Component')(		// Component
 		sector,
-		require(path + module + '.html')		// Template
+		require(path + 'template')		// Template
 	);
 }

@@ -8,19 +8,19 @@ sector.modules.forEach((module)=> {
 
 function connect(module) {
 	let path = './components/' + module + '/';
-	require(path + '_' + module)(sector);		// Model
-	require(path + module + 'Ctrl')(sector); 	// Controller
-	require(path + module + '.styl');			// Styles
-	require(path + 'index')(		// Component
+	require(path + 'Model')(sector);	// Model
+	require(path + 'Ctrl')(sector); 	// Controller
+	require(path + 'styles');			// Styles
+	require(path + 'Component')(		// Component
 		sector,
-		require(path + module + '.html')		// Template
+		require(path + 'template.html')	// Template
 	);
 
 	//let path = './components/';
 	//let context = require.context(
 	//	path,
 	//	true,
-	//	/^(?!.*index||html).*$/
+	//	/^(?!.*Component||template).*$/
 	//);
 	//context.keys().forEach(context);
 	//require(path + module) (

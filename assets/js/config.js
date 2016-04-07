@@ -12,19 +12,38 @@ const sector = angular.module('sector', [
 	'ngResource'
 ]);
 
-sector
-	.value('DEFAULTS', {
-		bitrate: 128,
-		rates: [
-			64,
-			128,
-			192,
-			256
-		]
-	});
+sector.value('DEFAULTS', {
+	bitrate: 128,
+	rates: [
+		64,
+		128,
+		192,
+		256
+	],
+	equalizer: {
+		"0.2": 100,
+		"1": 90,
+		"3": 70,
+		"5": 60,
+		"6": 70,
+		"8": 70,
+		"9": 60,
+		"10": 80,
+		"11": 60,
+		"12": 50,
+		"13": 60,
+		"15": 70,
+		"16": 60,
+		"17": 80,
+		"18": 80,
+		"20": 100
+	}
+});
 
 sector.modules = [
-	'bitrate'
+	'bitrate',
+	'equalizer',
+	'player'
 ];
 
 module.exports = sector;
