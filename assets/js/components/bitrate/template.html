@@ -1,0 +1,6 @@
+.player__bitrate
+  .colname Качество Ogg
+  ul(ng-repeat='rate in rates')
+    li(ng-class='{active: rate === bitrate}')
+      a(href='javascript: void(0)', ng-click='update(rate)') {{rate}} Kbps
+  .colname Качество аудиопотока

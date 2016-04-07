@@ -4,18 +4,21 @@ const NODE_ENV = process.env.NODE_ENV || 'development',
 	is_dev = NODE_ENV === 'development',
 	webpack = require ('webpack'),
 
-	autoprefixer = require('autoprefixer'),
+	nib = require('nib'),
+	poststylus = require('poststylus'),
+	//autoprefixer = require('autoprefixer'),
+
 	HtmlWebpackPlugin = require('html-webpack-plugin'),
-	ExtractTextPlugin = require('extract-text-webpack-plugin'),
+	ExtractTextPlugin = require('extract-text-webpack-plugin')
 	//PathRewriterPlugin = require('webpack-path-rewriter')
-	CopyWebpackPlugin = require('copy-webpack-plugin');
+	//CopyWebpackPlugin = require('copy-webpack-plugin');
+	;
 
 module.exports = {
 
 	context: __dirname,
 	entry: {
 		main: "./assets/js/application.js",
-		test: "./assets/js/test.js",
 		styles: "./assets/css/application.styl"
 	},
 
@@ -24,7 +27,7 @@ module.exports = {
 			"node_modules",
 			"bower_components"
 		],
-		extensions: ["", ".json", ".js", ".styl"]
+		extensions: ["", ".json", ".js", ".styl", '.html', '.jade']
 	},
 
 	output: {
@@ -77,7 +80,10 @@ module.exports = {
 	},
 
 	stylus: {
-		use: [require('nib')()],
+		use: [
+			nib(),
+			poststylus('rucksack-css')
+		],
 		import: ['~nib/lib/nib/index.styl']
 	},
 
@@ -102,8 +108,9 @@ module.exports = {
 		new ExtractTextPlugin('[name]-[hash].css', {
 			allChunks: true,
 			disable: is_dev
-		}),
-		new webpack.DefinePlugin({"process.env": {NODE_ENV: process.env.NODE_ENV }})
+		})
+		//,
+		//new webpack.DefinePlugin({"process.env": {NODE_ENV: process.env.NODE_ENV }})
 	]
 
 };
