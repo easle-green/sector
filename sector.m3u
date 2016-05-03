@@ -1,7 +1,7 @@
 #EXTM3U
-#EXTINF:-1,[Firewall] :: SECTOR RADIO
-http://sectorradio.ru/stream/SECTOR%20RADIO%2064
-http://sectorradio.ru/stream/SECTOR%20RADIO%20128
-http://sectorradio.ru/stream/SECTOR%20RADIO%20192
-http://sectorradio.ru/stream/SECTOR%20RADIO%20256
-http://sectorradio.ru/stream/SECTOR%20RADIO%20FLAC
+#EXTINF:-1,SECTOR RADIO Opus
+http://89.223.45.5:8000/progressive-56
+#EXTINF:-1,SECTOR RADIO Vorbis
+http://89.223.45.5:8000/progressive-160
+#EXTINF:-1,SECTOR RADIO FLAC
+http://89.223.45.5:8000/progressive-flac

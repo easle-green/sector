@@ -13,12 +13,11 @@ const sector = angular.module('sector', [
 ]);
 
 sector.value('DEFAULTS', {
-	bitrate: 128,
+	bitrate: 160,
+	tab: 0,
 	rates: [
-		64,
-		128,
-		192,
-		256
+		56,
+		160
 	],
 	equalizer: {
 		"0.2": 100,
@@ -43,7 +42,9 @@ sector.value('DEFAULTS', {
 sector.modules = [
 	'bitrate',
 	'equalizer',
-	'player'
+	'player',
+	'tab',
+	'blocks'
 ];
 
 module.exports = sector;

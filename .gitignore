@@ -5,6 +5,8 @@ npm-debug.log
 bower_components
 node_modules
 
+build
+sector_backup
 old
 php
 PSD

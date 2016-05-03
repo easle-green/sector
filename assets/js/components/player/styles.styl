@@ -1,16 +1,18 @@
+@import '../../../css/bootstrap_config.styl'
+
 .player
+
+  &__block
+    margin-left: -8px
+    margin-right: 6px
 
   &__track
     size 100% 65px
-    display: table
-    vertical-align: bottom
-    > div
-      display: table-cell
-      vertical-align: middle
+    margin-top: 11px
 
   &__round
     size 140px 140px
-    margin 28px auto 0
+    margin 50px auto 0
     padding: 30px
     background-color: rgba(255, 255, 255, 0.4)
     border-radius: 70px
@@ -43,13 +45,14 @@
     text-align: center
 
   &__volume
-    margin-left 20px
     &-slider
+      margin-left: 6px
       &.equalizer
         width: 40px
         margin-top: 14px
     .colname
-      margin-left: -11px
+      margin-left: -5px
+      margin-bottom: 23px
 
     &-slider
       &.equalizer
@@ -65,7 +68,7 @@
           height 190px
           position: relative
         &-point
-          absolute top 40px left -2px
+          absolute top 36px left -2px
           size 24px
           background-color #fff
           z-index 200
@@ -80,6 +83,8 @@
             content: ' '
             opacity 0
             transition all 0.2s ease 0s
+          &.moving:after
+            opacity 1
         &-line
           height 166px
           position: relative
@@ -87,7 +92,8 @@
         &-bg
           size 20px 110px
           absolute bottom 0 left 0
-          background-color #48A7E5
+          background-color $blue
+          border-radius 0 0 10px 10px
         &-description
           font-size 15px
-          margin-top: 7px
+          margin-top: 5px

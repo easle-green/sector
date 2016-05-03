@@ -1,5 +1,5 @@
 {
-  "name": "Sector-radio",
+  "name": "SectorRadio",
   "private": true,
   "version": "0.0.1",
   "description": "",
@@ -10,8 +10,8 @@
     "test": "NODE_ENV=test karma start",
     "postinstall": "",
     "prestart": "",
-    "start": "NODE_ENV=development webpack-dev-server --harmony --history-api-fallback --inline --progress",
-    "build": "NODE_ENV=production rimraf dist && webpack --harmony --bail --progress --profile"
+    "watch": "webpack-dev-server --colors --harmony --history-api-fallback --inline",
+    "build": "NODE_ENV=production webpack --colors --harmony --bail --progress --profile"
   },
   
   "dependencies": {
@@ -57,6 +57,7 @@
     "angular-resource": "^1.5.3",
     "angular-i18n": "^1.5.3",
     "angular-route": "^1.5.3",
+
     "jplayer": "",
     "zeptojs": ""
   }

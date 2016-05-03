@@ -1,6 +1,6 @@
 body
   color: white
-  font: lighter 10px "Segoe UI Light", "Segoe UI", "pragmaticalightclight", sans-serif
+  font: lighter 10px $basefont
   transition: background-color 1s ease-out
   &.orange
     background-color: #F2836B
@@ -16,7 +16,8 @@ body
   box-sizing(border-box)
 
 .st-content
-  background: rgb(150, 150, 150) url(../images/backgrounds/background1.png) no-repeat top center
+  background: #868686 url(../images/backgrounds/background-progressive.png) no-repeat top center
+  background-size 100%
   /*background-size cover*/
   /*overflow-y scroll*/
 
@@ -33,14 +34,22 @@ body
 
 .row
   max-width: none
+  &-nomargin
+    margin 0
+
+.columns
+  margin-left -17px
+
+.padded
+  padding-left 4% !important
+  padding-right 4% !important
 
 .inline
   display inline
 
 .container
   margin: auto
-  width: 1240px
-  padding: 0 20px
+  width: 100%
 
 .w100
   width: 100%

@@ -7,9 +7,9 @@ const NODE_ENV = process.env.NODE_ENV || 'development',
 	nib = require('nib'),
 
 	HtmlWebpackPlugin = require('html-webpack-plugin'),
-	ExtractTextPlugin = require('extract-text-webpack-plugin')
-	//PathRewriterPlugin = require('webpack-path-rewriter')
-	//CopyWebpackPlugin = require('copy-webpack-plugin');
+	ExtractTextPlugin = require('extract-text-webpack-plugin'),
+	PathRewriterPlugin = require('webpack-path-rewriter'),
+	CopyWebpackPlugin = require('copy-webpack-plugin');
 	;
 
 module.exports = {
@@ -29,7 +29,7 @@ module.exports = {
 	},
 
 	output: {
-		path: __dirname + "/assets",
+		path: is_dev? __dirname + "/assets" : __dirname + "/build",
 		publicPath: "/",
 		//filename: is_dev? "sector.js" : "[name]-[hash].js",
 		filename: 'sector-[chunkhash].js',
@@ -129,7 +129,7 @@ if (!is_dev) {
 		// Copy assets from the public folder
 		// Reference: https://github.com/kevlened/copy-webpack-plugin
 		//new CopyWebpackPlugin([{
-		//	from: __dirname + '/src/public'
+		//	from: __dirname + '/build'
 		//}])
 	);
 }

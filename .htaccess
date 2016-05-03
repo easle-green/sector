@@ -4,3 +4,35 @@
 
 RemoveHandler .svg
 AddType image/svg+xml .svg
+
+Redirect 301 "/stream/SECTOR RADIO 64" http://89.223.45.5:8000/sector-64
+Redirect 301 "/stream/SECTOR RADIO 128" http://89.223.45.5:8000/sector-128
+Redirect 301 "/stream/SECTOR RADIO 192" http://89.223.45.5:8000/sector-192
+Redirect 301 "/stream/SECTOR RADIO 256" http://89.223.45.5:8000/sector-256
+Redirect 301 "/stream/SECTOR RADIO FLAC" http://89.223.45.5:8000/sector-flac
+
+Redirect 301 "/radio/64" http://89.223.45.5:8000/sector-64
+Redirect 301 "/radio/128" http://89.223.45.5:8000/sector-128
+Redirect 301 "/radio/192" http://89.223.45.5:8000/sector-192
+Redirect 301 "/radio/256" http://89.223.45.5:8000/sector-256
+Redirect 301 "/radio/FLAC" http://89.223.45.5:8000/sector-flac
+
+Redirect 301 "/64" http://89.223.45.5:8000/sector-64
+Redirect 301 "/128" http://89.223.45.5:8000/sector-128
+Redirect 301 "/192" http://89.223.45.5:8000/sector-192
+Redirect 301 "/256" http://89.223.45.5:8000/sector-256
+Redirect 301 "/flac" http://89.223.45.5:8000/sector-flac
+
+Redirect 301 "/space/96" http://89.223.45.5:8000/space-96
+Redirect 301 "/space/256" http://89.223.45.5:8000/space-256
+Redirect 301 "/space/FLAC" http://89.223.45.5:8000/space-flac
+Redirect 301 "/stream/SECTOR | Space-96" http://89.223.45.5:8000/space-96
+Redirect 301 "/stream/SECTOR | Space-256" http://89.223.45.5:8000/space-256
+Redirect 301 "/stream/SECTOR | Space-FLAC" http://89.223.45.5:8000/space-flac
+
+Redirect 301 "/electronic/56" http://89.223.45.5:8000/electronic-56
+Redirect 301 "/electronic/160" http://89.223.45.5:8000/electronic-160
+Redirect 301 "/electronic/FLAC" http://89.223.45.5:8000/electronic-flac
+Redirect 301 "/stream/SECTOR | Electronic-56" http://89.223.45.5:8000/electronic-56
+Redirect 301 "/stream/SECTOR | Electronic-160" http://89.223.45.5:8000/electronic-160
+Redirect 301 "/stream/SECTOR | Electronic-FLAC" http://89.223.45.5:8000/electronic-flac
